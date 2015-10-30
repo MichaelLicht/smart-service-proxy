@@ -5,6 +5,7 @@ import eu.spitfire.ssp.backend.coap.CoapComponentFactory;
 import eu.spitfire.ssp.backend.files.TurtleFilesComponentFactory;
 import eu.spitfire.ssp.backend.generic.ComponentFactory;
 import eu.spitfire.ssp.backend.vs.VirtualSensorsComponentFactory;
+import eu.spitfire.ssp.server.handler.MqttHandlerML;
 import eu.spitfire.ssp.server.handler.SemanticCache;
 import eu.spitfire.ssp.server.internal.message.WebserviceRegistration;
 import eu.spitfire.ssp.server.handler.HttpRequestDispatcher;
@@ -231,6 +232,7 @@ public abstract class Initializer {
 //            handler.add(mqttHandler);
 
         handler.add(semanticCache);
+        handler.add(new MqttHandlerML());
         handler.add(httpRequestDispatcher);
 
         this.serverBootstrap.setPipelineFactory(new HttpProxyPipelineFactory(handler));

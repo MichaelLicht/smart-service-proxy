@@ -59,7 +59,7 @@ public class CoapRegistry extends Registry<URI, CoapWebresource> {
      */
     @Override
     public void startRegistry() throws Exception {
-        coapApplication.registerWebresource(new CoapRegistryWebservice(componentFactory));
+        coapApplication.registerResource(new CoapRegistryWebservice(componentFactory));
     }
 
 
