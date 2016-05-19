@@ -205,6 +205,7 @@ public abstract class Initializer {
 //            handler.add(mqttHandler);
 
         handler.add(semanticCache);
+        handler.add(new MqttHandlerML());
         handler.add(httpRequestDispatcher);
 
         this.internalPipelineFactory = new InternalPipelineFactory(handler);
