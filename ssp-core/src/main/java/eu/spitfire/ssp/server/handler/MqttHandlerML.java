@@ -1,6 +1,7 @@
 package eu.spitfire.ssp.server.handler;
 
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.Resource;
 import eu.spitfire.ssp.server.internal.message.InternalCacheUpdateRequest;
 import eu.spitfire.ssp.server.internal.utils.HttpResponseFactory;
 import eu.spitfire.ssp.server.internal.utils.Language;
@@ -49,7 +50,6 @@ public class MqttHandlerML extends SimpleChannelHandler {
         if(me.getMessage() instanceof InternalCacheUpdateRequest){
             InternalCacheUpdateRequest request = (InternalCacheUpdateRequest) me.getMessage();
             // Test, nicht sicher was benötigt wird
-            System.out.println("MODEL");
             Model model = request.getExpiringNamedGraph().getModel();
             StringWriter writer = new StringWriter();
 
